@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title, Explanation } from './Article';
+import { Title, Explanation, Image } from './Article';
 
 
 interface IArticle {
@@ -17,10 +17,16 @@ interface IAPODArticleProps extends React.Props<any> {
     article: IArticle;
 }
 
-function APODArticle({ article: { title, explanation } }: IAPODArticleProps) {
+function APODArticle({ article: {
+    title,
+    explanation,
+    url,
+    hdurl
+} }: IAPODArticleProps) {
     return (
         <div className="article">
             <Title title={title} />
+            <Image url={url} hdurl={hdurl} />
             <Explanation explanation={explanation} />
         </div>
     );
