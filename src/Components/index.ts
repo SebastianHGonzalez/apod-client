@@ -1,5 +1,7 @@
 import APODClient from './APODClient';
+import APODArticle from './APODArticle';
 
 export {
-    APODClient
+    APODArticle,
+    APODClient,
 };
