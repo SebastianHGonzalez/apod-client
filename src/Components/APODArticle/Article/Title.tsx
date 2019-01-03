@@ -1,14 +1,16 @@
 import React from 'react';
 
-interface ITitleProps extends React.Props<any> {
-    title: string;
+interface ITitleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
+
 }
 
-function Title({ title }: ITitleProps) {
+function Title({ className, ...props }: ITitleProps) {
+    const ownClassName = "article-title";
     return (
-        <h1 className="title">
-            {title}
-        </h1>
+        <h1 
+        className={className ? `${ownClassName} ${className}` : ownClassName} 
+        {...props} 
+        />
     );
 }
 

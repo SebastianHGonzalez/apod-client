@@ -1,11 +1,9 @@
 import Title from './Title';
-import Image from './Image';
 import ImageContainer from './ImageContainer';
-import Explanation from './Explanation';
+import Body from './Body';
 
 export {
     Title,
-    Image,
     ImageContainer,
-    Explanation,
+    Body,
 };

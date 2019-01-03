@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Title, Explanation, Image } from './Article';
+import { Title, Body, ImageContainer } from './Article';
 
 
 interface IArticle {
@@ -25,9 +25,15 @@ function APODArticle({ article: {
 } }: IAPODArticleProps) {
     return (
         <div className="article">
-            <Title title={title} />
-            <Image url={url} hdurl={hdurl} />
-            <Explanation explanation={explanation} />
+            <Title>
+                {title}
+            </Title>
+            <ImageContainer>
+                <img src={url} />
+            </ImageContainer>
+            <Body>
+                {explanation}
+            </Body>
         </div>
     );
 }
