@@ -3,6 +3,8 @@ import React from 'react';
 import { Title, Body, ImageContainer } from './Article';
 import IArticle from '../../Models/IArticle';
 
+import './APODArticle.css';
+
 
 interface IAPODArticleProps extends React.Props<any> {
     article: IArticle;
