@@ -1,13 +1,13 @@
 {
-  "main.css": "/apod-client/static/css/main.bf064e07.chunk.css",
-  "main.js": "/apod-client/static/js/main.bbc536cb.chunk.js",
-  "main.js.map": "/apod-client/static/js/main.bbc536cb.chunk.js.map",
-  "static/js/1.b9717939.chunk.js": "/apod-client/static/js/1.b9717939.chunk.js",
-  "static/js/1.b9717939.chunk.js.map": "/apod-client/static/js/1.b9717939.chunk.js.map",
+  "main.css": "/apod-client/static/css/main.6b8a42b6.chunk.css",
+  "main.js": "/apod-client/static/js/main.c956e6b2.chunk.js",
+  "main.js.map": "/apod-client/static/js/main.c956e6b2.chunk.js.map",
+  "static/js/1.d3243279.chunk.js": "/apod-client/static/js/1.d3243279.chunk.js",
+  "static/js/1.d3243279.chunk.js.map": "/apod-client/static/js/1.d3243279.chunk.js.map",
   "runtime~main.js": "/apod-client/static/js/runtime~main.c087f393.js",
   "runtime~main.js.map": "/apod-client/static/js/runtime~main.c087f393.js.map",
-  "static/css/main.bf064e07.chunk.css.map": "/apod-client/static/css/main.bf064e07.chunk.css.map",
+  "static/css/main.6b8a42b6.chunk.css.map": "/apod-client/static/css/main.6b8a42b6.chunk.css.map",
   "index.html": "/apod-client/index.html",
-  "precache-manifest.7464151d4ed00cff9fde47fc44b6defe.js": "/apod-client/precache-manifest.7464151d4ed00cff9fde47fc44b6defe.js",
+  "precache-manifest.1491db180913f6d43a011a23ae44dc51.js": "/apod-client/precache-manifest.1491db180913f6d43a011a23ae44dc51.js",
   "service-worker.js": "/apod-client/service-worker.js"
 }
