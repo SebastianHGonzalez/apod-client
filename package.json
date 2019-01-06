@@ -1,7 +1,23 @@
 {
-  "name": "apod-client",
-  "version": "0.1.0",
+  "name": "@sebastianhgonzalez/apod-client",
+  "displayName": "apod-client",
+  "description": "React client for NASA's Astronomy Picture of the Day API endpoint",
+  "homepage": "https://sebastianhgonzalez.github.io/apod-client/",
+  "version": "1.0.0",
+  "author": {
+    "email": "sebastian.h.gonzalez@gmail.com",
+    "name": "Sebastian Gonzalez"
+  },
+  "bugs": "https://github.com/SebastianHGonzalez/apod-client/issues",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
     "@types/jest": "23.3.11",
     "@types/node": "10.12.18",
@@ -12,14 +28,6 @@
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.2",
     "typescript": "3.2.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
