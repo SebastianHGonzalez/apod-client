@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { APODArticle } from '.';
-import { Spinner } from './Common';
+import { Spinner, Error } from './Common';
 import IArticle from '../Models/IArticle';
 import IAPODApiClient from '../Clients/IAPODApiClient';
 
@@ -12,6 +12,7 @@ interface IAPODClientProps extends React.Props<any> {
 
 interface IAPODClientState {
     article: IArticle | null;
+    error: Error | null;
 }
 
 export default class APODClient extends React.Component<IAPODClientProps, IAPODClientState> {
@@ -20,7 +21,8 @@ export default class APODClient extends React.Component<IAPODClientProps, IAPODC
         super(props);
 
         this.state = {
-            article: null
+            article: null,
+            error: null,
         }
 
         this.fetchArticle();
@@ -31,6 +33,8 @@ export default class APODClient extends React.Component<IAPODClientProps, IAPODC
 
         api.fetchArticle().then((article: IArticle) => {
             this.setArticle(article);
+        }).catch((err: Error) => {
+            this.setError(err);
         });
     }
 
@@ -38,12 +42,16 @@ export default class APODClient extends React.Component<IAPODClientProps, IAPODC
         this.setState({ article });
     }
 
+    private setError(error: Error) {
+        this.setState({ error });
+    }
+
     public render() {
-        const article = this.state.article;
+        const { article, error } = this.state;
 
         return (
             <div id="APODClient">
-                {article ? <APODArticle article={article} /> : <Spinner />}
+                {article ? <APODArticle article={article} /> : error && <Error error={error} /> || <Spinner />}
             </div>
         );
     }

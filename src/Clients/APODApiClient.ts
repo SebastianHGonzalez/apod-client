@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosError } from 'axios';
 
 import IAPODApiClient from './IAPODApiClient';
 
@@ -26,7 +26,15 @@ class APODApiClient implements IAPODApiClient {
     }
 
     fetchArticle() {
-        return this.axios.get(this.endpoint).then((response) => response.data);
+        return this.axios.get(this.endpoint)
+            .then((response) => response.data)
+            .catch((error: AxiosError) => {
+                const responseMessage = error.response &&
+                    error.response.data &&
+                    error.response.data.error &&
+                    error.response.data.error.message;
+                throw new Error(responseMessage || error.message);
+            });
     }
 }
 
