@@ -1,0 +1,33 @@
+.image-container {
+    margin: 1em 1em 2em 1em;
+}
+
+.image-container img {
+    background-color: lightgrey;
+}
+
+@media (max-width: 800px){
+    .image-container {
+        max-height: 20em;
+        overflow: hidden;
+    }
+    
+    .image-container img {
+        width: 100%;
+        position: relative;
+        bottom: 50%;
+        background-color: lightgrey;
+    }
+}
+
+@media (min-width: 800px) {
+    .image-container {
+        float: left;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+}
