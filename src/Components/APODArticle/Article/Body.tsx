@@ -1,5 +1,8 @@
 import React from 'react';
 
+import './Body.css';
+
+
 interface IBodyProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
 
 }
