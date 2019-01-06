@@ -1,16 +1,18 @@
 import React from 'react';
 
 interface IImageContainerProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-
+    href: string;
 }
 
-function ImageContainer({ className, ...props }: IImageContainerProps) {
+function ImageContainer({ className, href, ...props }: IImageContainerProps) {
     const ownClassName = "image-container";
     return (
-        <div 
-        className={className ? `${ownClassName} ${className}` : ownClassName} 
-        {...props} 
-        />
+        <a href={href}>
+            <div
+                className={className ? `${ownClassName} ${className}` : ownClassName}
+                {...props}
+            />
+        </a>
     );
 }
 
