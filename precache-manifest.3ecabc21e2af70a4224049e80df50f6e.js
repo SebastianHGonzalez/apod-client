@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c956e6b28540d671c27a",
+    "revision": "f209bda99825058e7753",
     "url": "/apod-client/static/css/main.6b8a42b6.chunk.css"
   },
   {
-    "revision": "c956e6b28540d671c27a",
-    "url": "/apod-client/static/js/main.c956e6b2.chunk.js"
+    "revision": "f209bda99825058e7753",
+    "url": "/apod-client/static/js/main.f209bda9.chunk.js"
   },
   {
     "revision": "d3243279bbe1a87c3056",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/apod-client/static/js/runtime~main.c087f393.js"
   },
   {
-    "revision": "3248b9da6602442ba73ec88b9357feec",
+    "revision": "eb8ea8bac3344f427a93adef586f3714",
     "url": "/apod-client/index.html"
   }
 ];
