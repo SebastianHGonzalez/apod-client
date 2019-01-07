@@ -24,7 +24,9 @@ export default class APODClient extends React.Component<IAPODClientProps, IAPODC
             article: null,
             error: null,
         }
+    }
 
+    componentWillMount() {
         this.fetchArticle();
     }
 
