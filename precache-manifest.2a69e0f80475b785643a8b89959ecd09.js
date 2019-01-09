@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/apod-client/static/js/runtime~main.c087f393.js"
   },
   {
-    "revision": "eb8ea8bac3344f427a93adef586f3714",
+    "revision": "a96405b89634d7ced12c9fffa9feaaec",
     "url": "/apod-client/index.html"
   }
 ];
