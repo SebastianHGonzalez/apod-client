@@ -1,5 +1,3 @@
-import apodApiClient from './APODApiClient';
+import config from './config';
 
-export default {
-    apodApiClient
-};
+export default config;
