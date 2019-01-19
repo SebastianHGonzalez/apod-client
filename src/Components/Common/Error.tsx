@@ -4,7 +4,7 @@ import './Error.css';
 
 
 interface IErrorProps extends React.Props<any> {
-    error: Error;
+    error?: Error;
 }
 
 function Error({ error }: IErrorProps) {
@@ -13,7 +13,7 @@ function Error({ error }: IErrorProps) {
             <strong>
                 Error:
             </strong>
-            {error.message}
+            {` ${error ? error.message : "Programming Error"}`}
         </div>
     );
 }

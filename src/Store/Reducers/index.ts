@@ -1,6 +1,20 @@
 import { combineReducers } from "redux";
 
-const reducers = {};
+import article, { IArticleState } from './Article';
+
+export const initialState: IState = {
+    article: {
+        fetching: false,
+    },
+}
+
+export interface IState {
+    article: IArticleState;
+}
+
+const reducers = {
+    article,
+};
 
 const rootReducer = combineReducers(reducers);
 

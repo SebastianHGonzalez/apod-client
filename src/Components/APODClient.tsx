@@ -1,60 +1,45 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { APODArticle } from '.';
 import { Spinner, Error } from './Common';
+import { IStore } from '../Store/Reducers';
+import Actions from '../Store/Actions';
 import IArticle from '../Models/IArticle';
-import IAPODApiClient from '../Clients/IAPODApiClient';
 
 
 interface IAPODClientProps extends React.Props<any> {
-    apodApiClient: IAPODApiClient;
+    article?: IArticle;
+    fetching: boolean;
+    error?: Error;
+    fetchArticle: () => void;
 }
 
-interface IAPODClientState {
-    article: IArticle | null;
-    error: Error | null;
-}
+class APODClient extends React.Component<IAPODClientProps> {
 
-export default class APODClient extends React.Component<IAPODClientProps, IAPODClientState> {
-
-    constructor(props: IAPODClientProps) {
-        super(props);
-
-        this.state = {
-            article: null,
-            error: null,
-        }
-    }
-
-    componentWillMount() {
-        this.fetchArticle();
-    }
-
-    private fetchArticle() {
-        const api = this.props.apodApiClient;
-
-        api.fetchArticle().then((article: IArticle) => {
-            this.setArticle(article);
-        }).catch((err: Error) => {
-            this.setError(err);
-        });
-    }
-
-    private setArticle(article: IArticle) {
-        this.setState({ article });
-    }
-
-    private setError(error: Error) {
-        this.setState({ error });
+    public componentDidMount() {
+        this.props.fetchArticle();
     }
 
     public render() {
-        const { article, error } = this.state;
+        const { article, error, fetching } = this.props;
 
         return (
             <div id="APODClient">
-                {article ? <APODArticle article={article} /> : error && <Error error={error} /> || <Spinner />}
+                {fetching ? <Spinner /> : error ? <Error error={error} /> : article ? <APODArticle article={article} /> : <Error />}
             </div>
         );
     }
 }
+
+function mapStateToProps({ article: { data, fetching, error } }: IStore) {
+    return {
+        article: data,
+        fetching,
+        error,
+    }
+}
+
+export default connect(mapStateToProps, {
+    fetchArticle: Actions.creators.fetchArticle,
+})(APODClient);
