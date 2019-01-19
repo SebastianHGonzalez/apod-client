@@ -1,11 +1,14 @@
-import { all, Effect } from "redux-saga/effects";
+import { all, call } from "redux-saga/effects";
 
-const sagas: Effect[] = [
+import articleSaga from './Article';
 
+
+const sagas = [
+    articleSaga,
 ];
 
 function* rootSaga() {
-    yield all(sagas)
+    yield all(sagas.map(call));
 }
 
 export default rootSaga;

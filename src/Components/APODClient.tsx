@@ -46,5 +46,5 @@ function mapStateToProps(state: IState) {
 }
 
 export default connect(mapStateToProps, {
-    fetchArticle: actions.creators.fetchArticle,
+    fetchArticle: actions.creators.fetchArticle.start,
 })(APODClient);
