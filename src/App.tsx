@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 
+import store from './Store';
 import { APODClient } from './Components';
-import { APODApiClient } from './Clients';
-
-import config from './Config';
-
 
 function App() {
-  const apodApiClient = new APODApiClient(config.apodApiClient);
-
   return (
     <div className="App">
-      <APODClient apodApiClient={apodApiClient} />
+      <Provider store={store}>
+        <APODClient />
+      </Provider>
     </div>
   );
 }
