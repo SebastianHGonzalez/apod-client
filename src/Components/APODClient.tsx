@@ -3,9 +3,14 @@ import { connect } from 'react-redux';
 
 import { APODArticle } from '.';
 import { Spinner, Error } from './Common';
-import { IStore } from '../Store/Reducers';
-import Actions from '../Store/Actions';
+import { IState } from '../Store/Reducers';
+import actions from '../Store/Actions';
 import IArticle from '../Models/IArticle';
+import {
+    getCurrentArticle,
+    isFetchingArticle,
+    getError,
+} from '../Store/Selectors';
 
 
 interface IAPODClientProps extends React.Props<any> {
@@ -32,14 +37,14 @@ class APODClient extends React.Component<IAPODClientProps> {
     }
 }
 
-function mapStateToProps({ article: { data, fetching, error } }: IStore) {
-    return {
-        article: data,
-        fetching,
-        error,
-    }
+function mapStateToProps(state: IState) {
+    return ({
+        article: getCurrentArticle(state),
+        fetching: isFetchingArticle(state),
+        error: getError(state),
+    });
 }
 
 export default connect(mapStateToProps, {
-    fetchArticle: Actions.creators.fetchArticle,
+    fetchArticle: actions.creators.fetchArticle,
 })(APODClient);

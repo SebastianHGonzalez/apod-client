@@ -13,7 +13,7 @@ function Error({ error }: IErrorProps) {
             <strong>
                 Error:
             </strong>
-            {` ${error ? error.message : "Programming Error"}`}
+            {` ${error ? error.message : "Unexpected Error"}`}
         </div>
     );
 }
